@@ -71,10 +71,10 @@ export const getShow = (id) => traktRequest(`shows/${id}?extended=full`);
  *
  * @returns {Promise<Array>}
  */
-export const getTextQuery = (types = [], searchValue, fields = []) => {
+export const getTextQuery = (types, searchValue, fields) => {
   const TYPE_WHITELIST = ['movie', 'show', 'episode', 'person', 'list'];
 
-  if (types.length) {
+  if (!types || !types.length) {
     throw new Error('Not type selected for getTextQuery');
   }
 
@@ -85,7 +85,7 @@ export const getTextQuery = (types = [], searchValue, fields = []) => {
   });
 
   const typesParameter = types.join(',');
-  const fieldsParameter = fields.join(',');
+  const fieldsParameter = (fields || []).join(',');
 
   return traktRequest(`search/${typesParameter}?query=${searchValue}&fields=${fieldsParameter}`);
 };
