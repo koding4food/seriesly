@@ -5,12 +5,9 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+
+let styles = {};
 
 export default class seriesly extends Component {
   render() {
@@ -31,7 +28,7 @@ export default class seriesly extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
