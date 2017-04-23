@@ -1,7 +1,8 @@
 import { searchCriteria } from './search';
-import { mediaByType } from './media';
+import { mediaByType, popular } from './media';
 
 export default {
   searchCriteria,
   mediaByType,
+  popular,
 };
