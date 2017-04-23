@@ -1,8 +1,9 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './reducers';
+import reducers from './reducers';
+import createRouterReducer from './reducers/router';
 
-export default createStore(
-  reducer,
-  applyMiddleware(thunk),
-);
+export default function initStore(routerConfig) {
+  const nav = createRouterReducer(routerConfig);
+  return createStore(combineReducers({...reducers, nav}), applyMiddleware(thunk));
+}

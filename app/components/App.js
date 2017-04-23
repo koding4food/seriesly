@@ -1,4 +1,4 @@
-import React, { Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 let styles = {};
