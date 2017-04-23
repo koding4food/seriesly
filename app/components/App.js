@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Button } from 'react-native';
-import PopularShows from '../containers/PopularShowsContainer';
 
 const propTypes = {
   mediaByType: PropTypes.object.isRequired,
@@ -9,24 +8,23 @@ const propTypes = {
 };
 
 class App extends Component {
-
-  constructor(props) {
-    super(props);
-    this.onAboutButtonPress = this.onAboutButtonPress.bind(this);
-  }
-
-  onAboutButtonPress() {
-      const { navigate } = this.props.navigation;
-      navigate('About');
-  }
-  
+  static navigationOptions = {
+    title: 'Home',
+  };
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View>
-        <PopularShows />
         <Button
-          onPress={this.onAboutButtonPress}
+          onPress={() => navigate('PopularShows')}
+          title="Popular Shows"
+          color="#841584"
+          accessibilityLabel="Popular Shows"
+        />
+        <Button
+          onPress={() => navigate('About')}
           title="About"
           color="#841584"
           accessibilityLabel="About"

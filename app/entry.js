@@ -4,10 +4,12 @@ import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 import initStore from './store';
 import AppContainer from './containers/AppContainer';
 import About from './components/About';
+import PopularShows from './containers/PopularShowsContainer';
 
 const AppNavigator = StackNavigator({
   Home: { screen: AppContainer },
-  About: { screen: About }
+  About: { screen: About },
+  PopularShows: { screen: PopularShows },
 });
 
 // @TODO: (Kelvin De Moya) - Refactor pending.

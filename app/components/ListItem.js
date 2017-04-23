@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 let styles = {};
@@ -14,7 +14,7 @@ ListItem.propTypes = {
 styles = StyleSheet.create({
   row: {
     height: 50,
-  }
+  },
 });
 
 export default ListItem;

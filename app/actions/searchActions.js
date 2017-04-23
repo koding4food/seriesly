@@ -62,5 +62,5 @@ export function fetchPopularShows() {
     return getPopularShows()
       .then((res) => dispatch(createAction(POPULAR_SHOWS_SUCCESS, res)))
       .catch((err) => dispatch(createErrorAction(POPULAR_SHOWS_FAILURE, err)));
-  }
+  };
 }
