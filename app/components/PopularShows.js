@@ -7,6 +7,10 @@ class PopularShows extends Component {
     this.props.popularShows();
   }
 
+  static navigationOptions = {
+    title: 'Popular Shows',
+  };
+
   render() {
     return (
       <FlatList
