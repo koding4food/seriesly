@@ -3,9 +3,11 @@ import { Provider, connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 import initStore from './store';
 import AppContainer from './containers/AppContainer';
+import About from './components/About';
 
 const AppNavigator = StackNavigator({
-  Home: { screen: AppContainer }
+  Home: { screen: AppContainer },
+  About: { screen: About }
 });
 
 // @TODO: (Kelvin De Moya) - Refactor pending.
