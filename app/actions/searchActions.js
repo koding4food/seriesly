@@ -1,8 +1,11 @@
 import { createAction, createErrorAction } from './actionsHelper';
-import { getTextQuery } from '../services/traktApi';
+import { getTextQuery, getPopularShows } from '../services/traktApi';
 
 export const RESET_SEARCH_FILTERS = 'RESET_SEARCH_FILTERS';
 export const UPDATE_SEARCH_FILTER = 'UPDATE_SEARCH_FILTER';
+export const POPULAR_SHOWS_START = 'GET_POPULAR_SHOWS_START';
+export const POPULAR_SHOWS_SUCCESS = 'GET_POPULAR_SHOWS_SUCCESS';
+export const POPULAR_SHOWS_FAILURE = 'GET_POPULAR_SHOWS_FAILURE';
 export const QUERY_SEARCH_START = 'QUERY_SEARCH_START';
 export const QUERY_SEARCH_SUCCESS = 'QUERY_SEARCH_SUCCESS';
 export const QUERY_SEARCH_FAILURE = 'QUERY_SEARCH_FAILURE';
@@ -45,4 +48,19 @@ export function submitSearch() {
       .then((res) => dispatch(createAction(QUERY_SEARCH_SUCCESS, res)))
       .catch((err) => dispatch(createErrorAction(QUERY_SEARCH_FAILURE, err)));
   };
+}
+
+/**
+ * Fetches list of popular shows.
+ *
+ * @returns {Function<Promise>}
+ */
+export function fetchPopularShows() {
+  return (dispatch) => {
+    dispatch(createAction(POPULAR_SHOWS_START));
+
+    return getPopularShows()
+      .then((res) => dispatch(createAction(POPULAR_SHOWS_SUCCESS, res)))
+      .catch((err) => dispatch(createErrorAction(POPULAR_SHOWS_FAILURE, err)));
+  }
 }

@@ -20,3 +20,22 @@ export function mediaByType(currentState = {}, { type: actionType, payload }) {
       return currentState;
   }
 }
+
+/**
+ * Popular list.
+ *
+ * @param {Object} currentState - Redux Current State.
+ * @param {String} actionType   - Action type.
+ * @param {Array} payload       - Response payload.
+ * @returns {Object} New state, with response added.
+ */
+export function popular(currentState = {}, { type: actionType, payload }) {
+  switch (actionType) {
+    case search.POPULAR_SHOWS_START:
+      return currentState;
+    case search.POPULAR_SHOWS_SUCCESS:
+      return {...currentState, shows: payload};
+    default:
+      return currentState;
+  }
+}
