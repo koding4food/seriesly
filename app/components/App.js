@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { View, Button } from 'react-native';
 import PopularShows from '../containers/PopularShowsContainer';
 
 const propTypes = {
@@ -9,9 +9,29 @@ const propTypes = {
 };
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.onAboutButtonPress = this.onAboutButtonPress.bind(this);
+  }
+
+  onAboutButtonPress() {
+      const { navigate } = this.props.navigation;
+      navigate('About');
+  }
+  
+
   render() {
     return (
-      <PopularShows />
+      <View>
+        <PopularShows />
+        <Button
+          onPress={this.onAboutButtonPress}
+          title="About"
+          color="#841584"
+          accessibilityLabel="About"
+        />
+      </View>
     );
   }
 }
