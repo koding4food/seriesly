@@ -23,7 +23,7 @@ class PopularShows extends Component {
 
 PopularShows.propTypes = {
   popularShows: PropTypes.func.isRequired,
-  shows: PropTypes.array.isRequired,
+  shows: PropTypes.array,
 };
 
 export default PopularShows;
