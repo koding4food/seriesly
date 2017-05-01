@@ -1,21 +1,21 @@
 import React from 'react';
 import { Provider, connect } from 'react-redux';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 import initStore from './store';
 import AppContainer from './containers/AppContainer';
 import About from './components/About';
 import PopularShows from './containers/PopularShowsContainer';
 
-const AppNavigator = StackNavigator({
+const HomeNavigator = TabNavigator({
   Home: { screen: AppContainer },
-  About: { screen: About },
   PopularShows: { screen: PopularShows },
+  About: { screen: About },
 });
 
 // @TODO: (Kelvin De Moya) - Refactor pending.
 const AppWithNavigationState = (
   connect(state => ({ nav: state.nav }))((props) => (
-    <AppNavigator navigation={addNavigationHelpers({
+    <HomeNavigator navigation={addNavigationHelpers({
         dispatch: props.dispatch,
         state: props.nav,
       })}
@@ -24,7 +24,7 @@ const AppWithNavigationState = (
 );
 
 export default function Seriesly() {
-  const store = initStore(AppNavigator);
+  const store = initStore(HomeNavigator);
 
   return (
     <Provider store={store}>

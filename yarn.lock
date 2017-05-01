@@ -1610,12 +1610,6 @@ eslint-plugin-jsx-a11y:
     jsx-ast-utils "^1.0.0"
     object-assign "^4.0.1"
 
-eslint-plugin-prettier@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.0.1.tgz#2ae1216cf053dd728360ca8560bf1aabc8af3fa9"
-  dependencies:
-    requireindex "~1.1.0"
-
 eslint-plugin-react:
   version "6.10.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-6.10.3.tgz#c5435beb06774e12c7db2f6abaddcbf900cd3f78"
@@ -3464,11 +3458,11 @@ react-native-drawer-layout@1.2.0:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
-react-native-tab-view@^0.0.59:
-  version "0.0.59"
-  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.59.tgz#2cd1d809a5699fcc5d45fa6fc08deb21d3f81fea"
+react-native-tab-view@^0.0.61:
+  version "0.0.61"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.61.tgz#9f5446c9ad33158b87f0bccf5004fbff79ca1f92"
   dependencies:
-    eslint-plugin-prettier "^2.0.1"
+    prop-types "^15.5.8"
 
 react-native@0.43.4:
   version "0.43.4"
@@ -3555,9 +3549,9 @@ react-native@0.43.4:
     xpipe "^1.0.5"
     yargs "^6.4.0"
 
-"react-navigation@git+https://github.com/react-community/react-navigation.git":
-  version "1.0.0-beta.8"
-  resolved "git+https://github.com/react-community/react-navigation.git#c384e3371cde074663f3cd3d2cec7adecc8ae05e"
+react-navigation:
+  version "1.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.0.0-beta.9.tgz#9fb1f8e4d15cee70cc8b5d58719a986ca443664d"
   dependencies:
     clamp "^1.0.1"
     fbjs "^0.8.5"
@@ -3565,7 +3559,7 @@ react-native@0.43.4:
     path-to-regexp "^1.7.0"
     prop-types "^15.5.8"
     react-native-drawer-layout-polyfill "1.2.0"
-    react-native-tab-view "^0.0.59"
+    react-native-tab-view "^0.0.61"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -3787,10 +3781,6 @@ require-uncached@^1.0.2:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
-
-requireindex@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.1.0.tgz#e5404b81557ef75db6e49c5a72004893fe03e162"
 
 resolve-from@^1.0.0:
   version "1.0.1"
