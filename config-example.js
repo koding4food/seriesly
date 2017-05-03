@@ -1,6 +1,8 @@
 
 export default {
-  TRACK_API_VERSION: 2,
-  TRACK_API_KEY: '',
-  TRACK_API_HOST: 'https://api.trakt.tv/',
+  TRAKT_API_VERSION: 2,
+  TRAKT_API_KEY: '',
+  TRAKT_API_SECRET: '',
+  TRAKT_REDIRECT_URI: '',
+  TRAKT_API_HOST: 'https://api.trakt.tv/',
 };

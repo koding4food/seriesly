@@ -1,18 +1,31 @@
+const Trakt = require('nodeless-trakt');
 import config from '../../config';
 import httpClient from '../lib/httpClient';
+import { parse } from 'query-string';
 
+const trakt = new Trakt({
+  client_id: config.TRAKT_API_KEY,
+  client_secret: config.TRAKT_API_SECRET,
+  redirect_uri: config.TRAKT_REDIRECT_URI,
+}, true);
 
 const traktHttpOption = {
   headers: {
     'Content-Type': 'application/json',
-    'trakt-api-version': config.TRACK_API_VERSION,
-    'trakt-api-key': config.TRACK_API_KEY,
+    'trakt-api-version': config.TRAKT_API_VERSION,
+    'trakt-api-key': config.TRAKT_API_KEY,
   },
 };
 
-const traktUrl = (url) => `${config.TRACK_API_HOST}${url}`;
+const traktUrl = (url) => `${config.TRAKT_API_HOST}${url}`;
 const traktRequest = (url) => httpClient.get(traktUrl(url), traktHttpOption);
 
+export function exchangeAuthCode (response) {
+  const query = parse(response.url.replace(config.TRAKT_REDIRECT_URI, ''));
+  return trakt.exchange_code(query.code, trakt._authentication.state);
+};
+
+export const getAuthUrl = () => trakt.get_url();
 
 /**
  * Get Trending Movies
