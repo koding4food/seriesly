@@ -1,5 +1,7 @@
 import React from 'react';
+import { AsyncStorage } from 'react-native'
 import { Provider, connect } from 'react-redux';
+import { persistStore } from 'redux-persist';
 import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 import initStore from './store';
 import AppContainer from './containers/AppContainer';
@@ -25,6 +27,8 @@ const AppWithNavigationState = (
 
 export default function Seriesly() {
   const store = initStore(HomeNavigator);
+
+  persistStore(store, { storage: AsyncStorage, blacklist: ['nav'] });
 
   return (
     <Provider store={store}>
